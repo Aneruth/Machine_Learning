@@ -1,0 +1,30 @@
+######################## To Create a CSV data #############################
+fields = ['Name', 'Branch', 'Year', 'CGPA','ID','Pass CGPA']              #      
+# data rows of csv file                                                   #
+rows = [ ['Jeyashree', 'COE', '2', '9.0','1','6'],                        #
+         ['Giri', 'COE', '2', '9.1','2','6'],                             #
+         ['Aditya', 'IT', '2', '9.3','3','6'],                            #
+         ['Aishwarya', 'SE', '1', '9.5','4','6'],                         #
+         ['XYZ', 'MCE', '3', '7.8','5','6'],                              #
+         ['YXZ', 'EP', '2', '9.1','6','6'],                               #
+         ['Vidhya', 'COE', '2', '9.0','7','6'],                           #
+         ['Santhya', 'COE', '2', '9.0','8','6'],                          #
+         ['Mohan', 'COE', '2', '9.0','9','6'],                            #
+         ['Ravi', 'COE', '2', '9.0','10','6'],                            #
+         ['Aneruth', 'COE', '2', '9.0','11','6'],                         #
+         ['Abisheik', 'COE', '2', '9.0','12','6']]                        #
+                                                                          #
+# name of csv file                                                        #
+filename = "records.csv"                                                  #
+                                                                          #
+# writing to csv file                                                     #
+with open(filename, 'w') as csvfile:                                      #  
+    # creating a csv writer object                                        #  
+    csvwriter = csv.writer(csvfile)                                       #  
+                                                                          #       
+    # writing the fields                                                  #
+    csvwriter.writerow(fields)                                            #  
+                                                                          #
+    # writing the data rows                                               #
+    csvwriter.writerows(rows)                                             #
+###########################################################################

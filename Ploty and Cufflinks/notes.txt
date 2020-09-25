@@ -1,0 +1,28 @@
+Ploty And Cufflinks 
+
+Ploty is an interaction library and cufflinks connect the ploty with pandas.
+
+1. To Connect the (Notebook) Pandas and Python to the Js Library : init_notebook_mode(connected=True)
+
+2. To make the cufflinks to go offline : cf.go_offline()
+
+3. To display the plot figure : data_frame_name.iplot()
+
+4. To Display different types chart : data_frame_name.iplot(kind=‘type_of_chart_to_be_used’)
+    1. To display the scatter plot : data_frame_name.iplot(kind=‘scatter’,x=‘col1_name’,y=‘col2_name’,mode=‘markers’)
+
+5. Various functions of bar chart with random numbers : 
+    1. To aggregate the plot with more points in bar plot : data_frame_name.count().iplot(kind=‘box’)
+    2. To sum the plot with more points in bar plot : data_frame_name.sum().iplot(kind=‘box’)
+
+6. To create a 3d Surface Plot : 
+    1. data_frame_name.iplot(kind=’surface’)
+
+7. To create a spread type Data Chart (Mainly used it for stocks and finance related datasets): 
+    1. data_frame_name.iplot(kind=’spread’)
+
+8. To create a bubble Chart : 
+    1. data_frame_name.iplot(kind=‘bubble’,x=‘col_name’,y=‘col_name’)
+
+9. To Create a Matrix Plot : 
+    1. data_frame_name.scatter_matrix()

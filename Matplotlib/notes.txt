@@ -1,0 +1,44 @@
+MatplotLib: 
+
+Its a plotting lib in python similar to Matlab.
+
+To have a even spacing between the plots : plt.tight_layout()
+
+1. Two ways of creating marplotlib: 
+                                    1. Functional Method 
+                                                                    1. Subplot: plt.subplot(number_of_rows,number_colums,plot_name)
+                                    2. Object Oriented Method (This defines I na object method where it acts as a canvas.)
+                                                                    1. To create a figure : any_name = plt.figure()
+                                                                    2. To add the axes : any_name = any_name.add_axes([bottom, left, width, height]) eg: any_name.add_axes([0.56,0.98,1,0.88])
+                                                                    3. To add the x-label and y-label : any_name.set_xlabel(‘name’) and similar to the Y axis
+                                            1. To Insert two plot coincides with other:
+                                                                    1. Create a canvas (refer 2.1)
+                                                                    2. axes1 = name.plot(value1,value2) ———— axes2 = name.plot(value1,value2)
+                                                                    3. Use the same 2.2,2.3 to add the title and label.
+ 
+
+2. Figure Size and DPI :
+                                    1.  plt = plt.figure(figsize=(width, height),dpi=value) {The measurements should be in inches}
+3. To save a figure :
+                                    1. figure_name.savefig( ‘file_name.{extension}’ )
+4. Legends in Matplotlib :
+                                    1. ax.legend() —> calling function where it takes from “Axes” as “ax”.
+                            1. To Add a location of the legend:
+                                    1. ax.legend(loc=”postion_of_the_legend”) refer https://matplotlib.org/3.1.1/api/_as_genmatplotlib.pyplot.legend.html
+5. Setting Line Width, Colour and Customising Plot:
+                            1. Setting Colours in Matplotlib:
+                                    1. axes_name.plot( value1,value2,color=‘colour_to_be_used’)
+                            2. Line Width and Line Style:
+                                    1. axes_name.plot( value1,value2,lw=‘numbers_used’)
+                            3. Line Transparency:
+                                    1. axes_name.plot( value1,value2,alpha=‘numbers_used’)
+                            4. Line Style:
+                                    1. axes_name.plot( value1,value2,alpha=‘numbers_used’,ls=‘type_of_line_style_required’) { refer : [‘solid’ | ‘dashed’, ‘dashdot’, ‘dotted’ | (offset, on-off-dash-seq) | '-' | '--' | '-.' | ':' | 'None' | ' ' | ''] }
+                            5. Markers:
+                                    1. axes_name.plot( value1,value2,marker=‘marker_to_be_used’)
+                                    2. To make the marker size bigger : axes_name.plot( value1,value2,marker=‘marker_to_be_used’,markersize=‘size _of_the_marker)
+                            6. Plot Range: 
+                                    1. To set a limit : 
+                                        1. X Limit : axes_name.set_xlim([lower_bound_value , upper_bound_value])
+                                        2. Y Limit : axes_name.set_ylim([lower_bound_value , upper_bound_value])
+

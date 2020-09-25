@@ -1,0 +1,45 @@
+Pandas :
+
+1. Open source lib built on top of NumPy. It’s used for fast analysis, data cleaning and preparation.
+2. Has built in visualisation features.
+
+Series :
+
+1. The main difference between Numpy array and Series is axis label  (ie).. it can be indexed by labels.
+2. It can hold any type of data object in python.
+
+Calling Method : pd.Series(params)
+
+
+To Delete multiple columns: df.drop(df.iloc[:, start_value:stop_value], inplace=True, axis=1)
+To Delete multiple columns: df.drop(df.index[start_value:stop_value],0,inplace=True)
+
+DataFrames :
+
+1. To create a dataframes of random numbers : arry_name = pd.DataFrame(randn(3,2),[‘val1’,’val2’,’val3’],[‘col1’,’col2’])
+2. Indexing and slicing in DataFrame:
+    1. Indexing a Column : 
+                                1. arry_name[‘col_name’]
+                                2. arry_name.col_name [SQL Method]
+                                                    1. Indexing multiple Column :
+                                                                                    1. arry_name[ [‘col_name1’, ’col_name2] ]
+                                                    2. Create a new Column :
+                                                                                    1. arry_name[’new_col_name’] = arry_name[‘existing_col1’] + arry_name[‘existing_col2’] 
+                                                    3. To drop a Column : 
+                                                                                    1. arry_name.drop(‘col_name’,axis=1) by default it considers axis as “0”.
+                                                                                    2. To delete the column in the main table : arry_name.drop(‘col_name’,axis=1,inplace=True)
+                                                    4. To drop a Row:
+                                                                                    1. arry_name.drop(‘row_number’) by default it accepts axis as “0” so we need not to mention it.
+                                                    5. To get an information of a particular row(s) :
+                                                                                    1. For Single Row : arry_name.loc[‘row_number’]
+                                                                                    2. For Multiple Row(s) : arry_name[ [‘row_num1’ , ‘row_num2’] ]
+                                                                                    3. Another way to fetch a row using index position : arry_name.iloc[index_number]
+                                                    6. To fetch a subset from an table: 
+                                                                                    1. Using loc : arry_name.loc[ row_name , col_name ]
+                                                                                    2. Using iloc : arry_name.iloc[ [row_index] , [col_index] ]
+3. To get back the rows which has value greater than 0 : (Most feasible option for beginners)
+                                                    1. data_frame_name[data_frame_name[‘column_name/number’] > 0]
+4. To get back the row from the table : 
+                                                    1. data_frame_name[data_frame_name[‘column_name/number’] > 0][‘row_name/number’]
+5. Passing two condition at once in Pandas List:
+                                                    1. data_frame_name[ (data_frame_name[‘column_name/number’] > 0) & (data_frame_name[‘column_name/number’] > 0) ]

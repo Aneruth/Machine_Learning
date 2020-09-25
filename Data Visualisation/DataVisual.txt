@@ -1,0 +1,16 @@
+Pandas Data Visualisation
+
+1. To generate a histogram : assigned_name[‘column_name_to_show’].hist()
+
+2. Another way to create a plot graph : assigned_name[‘column_name_to_show’].plot(kind=type_of_chart) or assigned_name[‘column_name_to_show’].type_of_chart()
+
+3. To plot a line plot : data_frame_name.line(x=index_postion,y=col_to_be_presented)
+
+4. To make the points larger : data_frame_name.plot.type_of_chart(s=‘dataframe_name[‘col_name’])
+
+5. To Construct a Hex Plot : 
+            1. data_frame_name = pd.DataFrame(np.random.randn(total_value,columns_to_be_shown),columns=[‘col1_name’,’col2_name’])
+            2. df.plot.hexbin(x=‘col1_to_pass’,y=‘col_to_compare’)
+
+        1. To Change the size of the plot : 
+            1. df.plot.hexbin(x=‘col1_to_pass’,y=‘col_to_compare’,gridsize=number_to_use)

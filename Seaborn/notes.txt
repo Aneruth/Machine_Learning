@@ -1,0 +1,98 @@
+Seaborn 
+
+It has a default loading dataset  : arry_name = sns.load_dataset( ‘ arry_name ‘ )
+
+To view the dataset : arry_name.head()
+
+1. Distribution plots (Used to show the data in univariate method): 
+                1. sns.displot(arry_name[ ‘column_name_used_in_dataset’ ])
+                2. To remove kde : sns.displot(arry_name[ ‘column_name_used_in_dataset’ ],kde=False)
+                3. To modify the number of bins : sns.displot(arry_name[ ‘column_name_used_in_dataset’ ],bins=number_of_bins_needed)
+        
+        1. Joint Plot  (Used to show the data in bivariate method):
+                1. sns.jointplot( x=column_name, y=yet_to_compar_column_name,data=‘dataset_to_be_passed’ )
+            1. To make a hexagon distribution :
+                1. sns.jointplot( x=column_name, y=yet_to_comaper_column_name,kind= ‘ type_to_be_passed’ )
+        
+        2. Pair Plot  (Used to show the entire data in pair wise relationship):
+                1. sns.pairplot( data_set_to_be_passed )
+            1. Hue (This makes use of the column in categorical method) : 
+                1. sns.pairplot( data_set_to_be_passed , hue=‘ column_name_to_be_passed ’ )
+        
+        3. Rug Plot  (This passes only single column) It draws a dash line along the distributed points:
+                1. sns.rugplot(dataset_name[ ‘ column_name_to_be_passed’ ])
+        
+        4. KDE Plot (kernel density estimation plot): 
+                1. sns.kdeplot(dataset_name[ ‘ column_name_to_be_passed’ ])
+
+2. Categorical plots (Used for visualising the relationship between variables):
+
+            1. Bar Plot (Used to aggregate the column with some function just like mean): 
+                1. sns.barplot( x= ‘ categorical_column’ , y = ‘ compartive_column’, data= data_set_to_be_used)
+
+            2. Estimator Function (Statistical function to estimate within each categorical bin): 
+                1. sns.barplot( x= ‘ categorical_column’ , y = ‘ numerical_column’, data= data_set_to_be_used, estimator = {fuction_to_use} )
+
+            3. Count Plot (Counts the number of the given columns): 
+                1. sns.countplot( x= ‘ comparative_column’ , data= data_set_to_be_used)
+
+            4. Box Plot and Violin Plot :
+                1. sns.boxplot( x= ‘ column_number_1’ , y = ‘ column_number_2’ , data= data_set_to_be_used)
+                2. sns.violinplot( x= ‘ column_number_1’ , y = ‘ column_number_2’ , data= data_set_to_be_used)
+                3. To split the two value : 
+                    1. sns.violinplot( x= ‘ column_number_1’ , y = ‘ column_number_2’ , data= data_set_to_be_used, split= True)
+
+            5. Strip Plot (Used to draw a scatter plot where one variable is categorical ):
+                1. sns.stripplot( x= ‘ column_number_1’ , y = ‘ column_number_2’ , data= data_set_to_be_used)
+                2. To count how many plots are scattered on top of each other:
+                    1. sns.stripplot( x= ‘ column_number_1’ , y = ‘ column_number_2’ , data= data_set_to_be_used,jitter=True)
+
+            6. Swarm Plot (The locations of points are adjusted automatically to avoid overlap even if the jitter value is not applied):
+                1. sns.swarmplot(x= ‘ column_number_1’ , y = ‘ column_number_2’ , data= data_set_to_be_used)
+
+            7. Factor Plot (plot generated for different response and factor variables and arranged on a single page): 
+                1. sns.factorplot(x= ‘ column_number_1’ , y = ‘ column_number_2’ , data= data_set_to_be_used, kind= ‘ type_of_chart ‘)
+
+3. Matrix Plot : 
+            1. Heat Map :
+                1. sns.heatmap(varible_to_be_passed)
+                2. To show annotations of each map list : sns.heatmap(varible_to_be_passed, annot= True)
+                3. To add the line width and colour to a heat map : sns.heatmap(varible_to_be_passed, linecolor=‘color_name’,lw=number)
+
+            2. To get the table in matrix form : 
+                1. da.pivot_table(index=‘ index_column_to_be_selected ’ , columns = ‘column_to_be_selected’ , values = ‘column_to_be_selected’)
+
+            3. Cluster Map (It shows the hierarchical clustering to produced the clustered version of heatmap):
+                1. sns.clustermap(‘data_type_to_be_passed’)
+                2. To normalise the map : sns.clustermap(‘data_type_to_be_passed’,standard_scale=1) {1 -> the type of scale form 0 to 1} 
+
+            4. Grids : 
+                1. To check the unique values of a dataset : dataset_assign_name[‘column_name’].unique()
+                2. Pair Grid (The default map for pair plot, where we have to mention it manualy): 
+                    1. sns.PairGrid(‘ dataset_to_be_passed ’) 
+                        1. To map the pair grid : 
+                                                        1. Assign the pair grid to a variable for example v = sns.PairGrid(‘data_set’)
+                                                        2. Map function : g.map(type_of_plotting_figure_to_be_chosen)
+                        2. To pass on different type of maps (Upper,lower,diagnal) : 
+                                1. g.map_diag(type_of_map_to_be_used)
+                                2. g.map_upper(type_of_map_to_be_used)
+                                3. g.map_lower(type_of_map_to_be_used)
+                3. Facet Grid : 
+                    1. sns.FacetGrid(data=‘dataset_to_be_passed’,col=‘col_to_be’,row=‘row_to_be’)
+                    2. g.map(‘chart_to_be_used’, ‘parameter 1’, ’parameter 2’)
+
+            5. Regression Plot : 
+                1. LM Plot (Use to display Linear Model  with seaborn):
+                    1.  sns.lmplot(x=‘col_to_be_passed’,y=‘col_to_be_compared’,data=‘dataset_to_be_used’)
+                    2. To add a grid :
+                        1. sns.lmplot(x=‘col_to_be_passed’, y=‘col_to_be_used’,data=‘dataset_to_be_used’,col=‘col_to_be_compared’)
+                    3. To change the size and aspect ratio of a Seaborn plot : 
+                        1. sns.lmplot(x=‘col_to_be_passed’, y=‘col_to_be_used’,data=‘dataset_to_be_used’,col=‘col_to_be_compared’,aspect=‘line_width’,size=‘graph_size')
+                    4. Style And Font Size (Customisation a seaborn plot):
+                        1. sns.set_style(style :’any one of  {darkgrid, whitegrid, dark, white, ticks}’)
+                            1. To remove spine (if we are using ticks as theme) : sns.despine()
+                            2. To remove bottom and left spine : sns.despine(left=True , bottom=True)
+                        2. Figure Size : plt.figure(figsize=(‘ratio_of_the_plot’))
+                        3. Scale and Context : sns.set_context(context= ‘type’, font_scale= ‘size’)
+                    5. Palettes and Colours: 
+                        1.  sns.lmplot(x=‘col_to_be_passed’,y=‘col_to_be_compared’,data=‘dataset_to_be_used’,palette=‘color_to_be_used’)

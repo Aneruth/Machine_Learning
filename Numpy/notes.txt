@@ -1,0 +1,38 @@
+NumPy :
+
+Linear algebra library for python. It is fast and binds to C libraries.
+
+Calling Method : np.array()
+
+Keys : 
+1. arange —> Return evenly spaced values within a given interval. Calling : np.arange(start, stop,set)
+2. zeros —> Returns Zeros’ in array format. Calling : np.zeros()  To call 1D array np.zeros(3) To call 2D Array np.zeros(3,3) 
+3. linspace —> Return evenly spaced numbers over a specified interval. Calling : np.linespace()
+4. eye —> Returns Identity matrix. Calling :  np.eye() 
+5. random.rand —> Returns random numbers. Calling : np.random.rand()
+6. random.randn —> Returns values for Gaussian or Standard normal Distribution. Calling : np.random.randn()
+7. array_name.max() —> Returns the maximum value {same for minimum value replace max as min}
+8. array_name.argmax() —> Returns the index position of maximum value {same for minimum value replace max as min}
+9. array_name.shape —> Returns the shape of the array wether is it 1D,2D or 3D. 
+10. array_name.reshape —> Allows us to reshape the array into desired format.
+11. array_name.dtype —> Returns the type of array.
+
+Indexing Numpy Array
+
+1. Create a new matrix :- 
+                                    1. To Create a 1D Matrix :- arry_name = np.array( [1,2,3] )
+                                    2. To Create a 2D Matrix :- 
+                                                            1. arry_name = np.array([ [1,2,3],[4,5,6],[7,8,9] ]
+                                                            2. arry_name = np.arange(values).reshape( number_of_columns , number_of_rows )
+
+2. Indexing the Matrix (2D): 
+                                    1. arry_name[ row_number ][ col_number ] 
+                                    2. arry_name[ row_number , col_number ]
+
+3. Slicing a matrix :-  
+                                    1. To grab a particular matrix element :-  arry_name[ col_number : row_number ]
+                                    2. To grab a specific col, row element in a matrix :- arry_name[ start_col_number : start_row_number , end_col_number : end_row_number ]
+
+To find sum of all column elements in matrix : matrix_name.sum(axis=0)
+
+To find sum of all row elements in matrix : matrix_name.sum(axis=1)
