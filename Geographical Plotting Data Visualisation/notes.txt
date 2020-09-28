@@ -1,0 +1,52 @@
+Geographical Plotting 
+
+Plot for USA 
+
+This is used for plotting the given datasets using a plotly for plotting. Matplotlib also has basemap extension.
+
+1. Choropleth Maps (used to plot information global wise or nation wise scale): 
+
+	Step 1 : Create a dictionary : 
+			data = dict(
+	    					type = 'choropleth',
+					       locations = [‘AZ’,’CA’,’NY’],
+   						 locationmode = ‘USA-states',
+   						 colorscale = 'Portland',
+					       text = ['text1','text2','text3'],
+   						 z = [1.0,2.0,3.0],
+   						 colorbar = {'title': 'Title comes here'}
+					)
+
+	Step 2 : Create a Layout Variable or Object :
+				layout = dict(geo = {‘scope': ‘USA’})
+
+
+	Step 3 : To initialise the figure :
+				choromap = go.Figure(data= [data],layout=layout)
+				iplot(choromap)
+
+2. To add a marker to the map : Just add the ‘marker = dict(line = dict(color = 'rgb(255,255,255)',width = 2))’  to the dataset dictionary.
+
+
+Plot for WORLD
+
+1. Choropleth World Maps : 
+
+			Step 1 : Create a dictionary : 
+									vid = dict(
+   											 type = 'choropleth',
+											 locations = df1['CODE'],
+    											text = df1['COUNTRY'],
+    											z = df1['GDP (BILLIONS)'],
+										        colorbar = {'title': 'GDP in Miilions'}
+											)
+			Step 2 : Create a Layout Variable or Object :
+										lay1 = dict(
+											    title = '4014 Total GDP',
+											    geo = dict(showframe = False,
+											    projection = {'type':'Mercator'})
+											)
+
+			Step 3 : To initialise the figure :
+							map_name = go.Figure(data= [data_name],layout=layout_name)
+							iplot(map_name)
