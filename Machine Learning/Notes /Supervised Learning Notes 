@@ -1,0 +1,69 @@
+Supervised Learning 
+
+These algorithms are supervised ie. input are given for the desired output is known. 
+Eg : Positive vs Negative Review for a Movie 
+
+This algorithm works where it gets the input along with the corresponding output and it learns the with the actual output and finds the error.
+It also modifies with the model accordingly. 
+
+Uses of Supervised Learning :  Used in application where historical data which predicts the future.  
+
+
+Process for supervised learning: 
+
+
+														          Test Data 
+																	||
+																	||
+Data Acquisition —> Data Cleaning —> Model Training and Building <—> Model Testing —> Model Deployment 
+
+1. Data Acquisition : 
+	A process where the data is generated or received. 
+
+2. Data Cleaning : 
+	After receiving it form the Data Acquisition part we need to clean and the neural network can process it. This can be done using the Pandas Libraries.
+
+3. Model Training and Building  : 
+	It consist of two types of method : 
+												1. Train Data
+												2. Test Data 
+	It takes the 30% of the original data as test data and 70% as train data. 
+
+4. Model Testing : 
+	This unit compares the model prediction to the actual data present and compare the model prediction to the correct answer. If any discrepancy occurs it goes back to the model testing and compare it with the actual data. 
+
+Issues in Model Testing and Building is the splitting the dataset error. This is the key error to the supervised learning.
+To find out the result we can use the 3 way’s such as : RMSE (Root Mean Square Error Method), Performance Matrix, Regression Tax.
+
+The Data can be split it to 3 steps : 
+	1. Training Data : Use the trained model parameters  (It looks at the feature and correct output of the data) 
+	2. Validation Data : Used to determine the model parameters to adjust. (Test the performance of the validation data if possible it goes back to the data and adjust to the )
+	3. Test Data : Used to find the performance metric. (The test data is the actual data which performs in the real world and this data is not shown to either Validation data or Train data)
+All these steps are introduced between the validation.
+
+Evaluating Performance — Classification Errors : 
+Keys for classification matric (Model Evaluation): 
+	
+    1. Accuracy : 
+				1. Calculated by the number of correct predictions divided by the total number of predictions
+				2. The are really useful when we have equally balanced target Classes. Eg.. The dataset should consist of 50 percentage of Category A 					     and 50 percentage of Category B.
+			
+            Demerits of Accuracy : 
+				1. When we have the unbalanced data set then this part won’t be required as it would be too partial in showing the results.
+				2. For instance if the data set has a 99 images of Category A and 1 image of Category B then the output will be biased.
+
+	2. Recall :
+			The ability of a model to find the relevant cases of the datasets. 
+			It is defined as the number of true positives divided by number of true positives + number of true negatives. 
+	
+	3. Precision : 
+			The ability of the classification model to find the relevant data points in a data set. 	
+			It is defined as the number of true positives divided by number of true positives + number of false positives. 
+
+	4. F1-Score : 
+			Used to find the optimal value of both precision and recall where we can combine them using F1 Score.
+ 			It is the hormonic mean of precision and recall. It can be calculated by a formula :
+										2 X ((precision * recall) divided by (precision + recall))
+
+The classification matrix predicts only two outputs its either True or False ie.. it predicts your out is T or F. Eg : Categorical Prediction 
+We can bring out the predicted values to the compared values which is know as the Confusion Matrix.
