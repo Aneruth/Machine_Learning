@@ -4,7 +4,7 @@ These algorithms are supervised ie. input are given for the desired output is kn
 Eg : Positive vs Negative Review for a Movie 
 
 This algorithm works where it gets the input along with the corresponding output and it learns the with the actual output and finds the error.
-It also modifies with the model accordingly. 
+It also modifies with the model accordingly.
 
 Uses of Supervised Learning :  Used in application where historical data which predicts the future.  
 
@@ -12,9 +12,9 @@ Uses of Supervised Learning :  Used in application where historical data which p
 Process for supervised learning: 
 
 
-														          Test Data 
-																	||
-																	||
+														          	 Test Data 
+																		||
+																		||
 Data Acquisition —> Data Cleaning —> Model Training and Building <—> Model Testing —> Model Deployment 
 
 1. Data Acquisition : 
@@ -42,13 +42,11 @@ The Data can be split it to 3 steps :
 All these steps are introduced between the validation.
 
 Evaluating Performance — Classification Errors : 
-Keys for classification matric (Model Evaluation): 
-	
-    1. Accuracy : 
+Keys for classification matrix (Model Evaluation): 
+	1. Accuracy : 
 				1. Calculated by the number of correct predictions divided by the total number of predictions
 				2. The are really useful when we have equally balanced target Classes. Eg.. The dataset should consist of 50 percentage of Category A 					     and 50 percentage of Category B.
-			
-            Demerits of Accuracy : 
+			Demerits of Accuracy : 
 				1. When we have the unbalanced data set then this part won’t be required as it would be too partial in showing the results.
 				2. For instance if the data set has a 99 images of Category A and 1 image of Category B then the output will be biased.
 
@@ -67,3 +65,23 @@ Keys for classification matric (Model Evaluation):
 
 The classification matrix predicts only two outputs its either True or False ie.. it predicts your out is T or F. Eg : Categorical Prediction 
 We can bring out the predicted values to the compared values which is know as the Confusion Matrix.
+
+Evaluating Performance — Regression Errors : 
+This is used when the model is used to provide the continuous value unlike the categorical value. Eg… This can be used for the prediction of the housing price which deals with the continuous values. 
+
+Commonly used evaluation metrics for Regression : 
+
+1. Mean Absolute Error : In this method we are comparing our label (“ y-label ”) with the true outputs ie.. “ true y-label “.
+
+Formula : 
+	MAE = absolute( true_price - true_predcited_price )
+
+2. Mean Squared Error : This is used when the model has large error(punishes). 
+
+Formula : 
+	MSE = absolute( true_price - true_predcited_price ){power 2}
+
+3. Root Mean Error : It’s more popular cause it does both ie.. punishes the model with larger values and also show the same metrics as y. 
+	
+Formula : 
+	RMSE : sqrt( absolute( true_price - true_predcited_price ){power 2} )
