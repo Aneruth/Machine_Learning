@@ -85,3 +85,45 @@ Formula :
 	
 Formula : 
 	RMSE : sqrt( absolute( true_price - true_predcited_price ){power 2} )
+
+SciKit Learn 
+
+All algorithms from scikit are extracted from the “Estimator” object.
+Importing a linear regression model using scikit-learn  : 	from scikit.family  import Model_name
+
+For Example to import a linear regression model : from scikit.linear_model import LinearRegression 
+
+Initiating the model : 
+	Example … 
+	model - LinearRegression(normalize = True)
+	LinearRegression(copy_X = True, normalize True, fit_intercept = True)
+
+Splitting the dataset to a training dataset and test dataset : 
+
+Example : 
+	import bumpy as np 
+	from sklearn.cross_validation import train_test_split 
+
+	X,y  = np.arange(10).reshape((5,2)), range(5)
+
+	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+	//calling the X_train 
+	X_train
+
+	//calling the y_train
+	y_train
+
+	//calling the X_test
+	X_test
+
+	//calling the y_test
+	y_test
+
+Another way of splitting the Data is either train/fit the data. This can be done using model.fit() method. 
+Example … model.fit(X_train , y_train)
+
+To predict the models in supervised learning we have to call the method model.predict().
+Example … xyz = model.predict(X_test) 
+
+Note :  The method can be of diff algorithms
