@@ -1,0 +1,16 @@
+Linear Regression Theory 
+
+History : 
+	
+Started in 1800 by Francis Galton. He started by seeing the relationship between the children and their parents. He also investigated the fathers height with their sons. 
+
+For classic linear regression or least square method we need to calculate the closeness in “up and down” direction. 
+
+The goal of Linear regression is to minimise the distance between the data points and our line. 
+
+Ways to minimise the data : 
+	1. Sum of Squared Errors 
+	2. Sum of Absolute Errors 
+
+Popular method to minimise the data is “Least Square Method”. This linear regression line is fitted by minimising the sum of squares of the residuals. 
+The residual of Observation is defined by the difference between the observation(the Y-value) and the fitted line. 

@@ -43,3 +43,10 @@ DataFrames :
                                                     1. data_frame_name[data_frame_name[‘column_name/number’] > 0][‘row_name/number’]
 5. Passing two condition at once in Pandas List:
                                                     1. data_frame_name[ (data_frame_name[‘column_name/number’] > 0) & (data_frame_name[‘column_name/number’] > 0) ]
+
+6. To Describe the dataframe used : data_frame_name.describe() 
+    Generate descriptive statistics. Descriptive statistics include those that summarize the central tendency, dispersion and shape of a
+    dataset's distribution, excluding ``NaN`` values. Analyzes both numeric and object series, as well as ``DataFrame`` 
+    column sets of mixed data types.
+    
+###### To Be Continued #######
