@@ -14,3 +14,30 @@ Ways to minimise the data :
 
 Popular method to minimise the data is “Least Square Method”. This linear regression line is fitted by minimising the sum of squares of the residuals. 
 The residual of Observation is defined by the difference between the observation(the Y-value) and the fitted line. 
+
+Linear Regression
+
+Selecting a model in Scikit-Learn (updated) : from sklearn.model_selection import train_test_split 
+
+Train the data 
+
+Train_test_split : 
+
+Basically we do here is a tuple unpacking where we assign the test and train data for our assigned variable. The test_size is the percentage of the data we need to allocate. Random_state is to splits a specific set of random data because the train_test_split occurs randomly.
+
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=101)
+
+
+To Import the Boston datasets we need to import : from skit.datasets import load_boston
+								boston = load_boston()
+
+To check the keys present in the data set (boston) : boston.key()
+
+
+Predict the data
+
+To predict the data : 
+
+Step 1 : Initialise the unknown dataset : variable_name = model_name_locally_defined.predict( unknown_feature_used ) 
+
