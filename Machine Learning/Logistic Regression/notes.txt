@@ -1,0 +1,77 @@
+Logistic Regression (Section 4-4.3 of Introduction  to Statistical Learning)
+
+Basically it’s a Binary Classification Problem i.e.. it has two classified sets of comparison eg… Disease Prediction(yes/no) and Spam Emails(yes/no). 
+This model is used to predict the discrete categories for a particular problem. 
+
+We can transform the linear regression curve to a logistic regression curve. The Sigmoid(Logistic) is the key for understanding the value of outputs between 0 and 1. 
+
+Formula : sigmoid = 1 divided by (1 + e{to the power of -z})
+
+This logistic function is irrespective of the input value because the final output is only between 0 and 1.
+For instance we can also use the solution of linear regression function in the sigmoid function.
+
+Since the vertical axis consist of only two values 0 and 1 the cut-off point be 0.5 where the values below 0.5 belongs Class 0 and values above 0.5 belongs to Class 1. This vertical axis is irrespective of the inputs in the horizontal axis. 
+
+Model Evaluation using a Confusion Matrix : 
+
+Basic terminology : [‘TruePositive(TP)’,’TrueNegative(TN)’,’FalsePositive(FP)’,’FalseNegative(FN)’]
+
+False Positive is also known as Type 1 error. Eg.. “Telling a man you are pregnant.”
+False Negatives is also known as Type 2 error. Eg.. “Telling a pregnant lady you aren’t pregnant.”
+
+Rate Error Methods : 
+	
+1. Accuracy : 
+It is known as overall how often it is correct. 
+Formula : (True Negative + True Positive) / total_number_of_samples 
+
+2. Miss-classification Error Rate : 
+It is known as overall how often it is wrong. 
+Formula : (False Negative + False Positive) / total_number_of_samples 
+
+Cleaning the data : 
+
+One method id adding the missing data is Imputation(Taking the average of a particular column(s) data and filling it).
+
+Basic Step : check for data_frame_name.isnull()
+
+Step 1 : create a histogram for desired column to check the missing data 
+			sns.heatmap(data_frame_name.isnull(),yticklabels=False,cbar=False)
+
+Step 2 : manually insert few missing data for the desired column using impute function 
+		
+		Impute Function : 
+							Step 1 : Assign a function impute Eg… def impute(cols) 
+							Step 2 : Assign the desired column based on index position Eg… desired_col = cols[0]
+							Step 3 : Check the column with the help of if condition Eg… if pd.isnull(Parameter_to_be_passed)
+							Step 4 : Applying the impute function to the desired column 
+																				Eg… df[‘desired_column’] = df[[‘desired_col’,’categorical_col’]].apply(impute,axis=1) 
+							Step 5 : Stop 
+
+Step 3 : Again check the missing data. If the missing data is quiet larger then drop that particular column. 
+			data_frame_name.drop(‘column_name_to_be_dropped’,inplace=True,axis=1)
+
+Step 4 : Checking the missing data again by running the heat-map if any discrepancy occurs we can drop those values 
+			data_frame_name.dropna(inplace=True)
+ 
+
+
+			Creating a categorical dummy variables using pandas 
+
+						By default Machine can’t understand the string category for the classification, so for that purpose we have to create a 									dummy variable using pandas to make the machine understand. 
+
+						For example we have a column namely “Sex” with two categories “Male” and “Female” but the ML couldn’t figure out the 								string for this purpose create a dummy variable with either replacing it with a number.
+
+						To do this pandas have a in built function : pd.get_dummies(data_frame_name[‘column_to_be_passed’])
+						Major issue faced during this problem is “Multi-Collinearity“ where the machine predicts either of one category as  								‘’0” and other one as “1” by default. By doing this the algorithm messes up. 
+
+						To avoid Multi-Collinearity we just inplace a value such as : 
+																			pd.get_dummies(data_frame_name[‘column_to_be_passed’],drop_first=True)
+
+						After creating a dummy variable(s) we need to concat it with the main data frame : 
+															data_frame_name = pd.concat([data_frame_name,dummy_variable_name_column],axis=1)
+
+
+Predicting and Modelling the data : 
+
+Step 1 : separate the data into two columns X and y where “y” is the prediction column. 
