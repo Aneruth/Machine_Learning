@@ -1,0 +1,57 @@
+K Nearest Neighbours (Chapter 4 Introduction to Statistical Learning)
+
+It is a classification problem where it classifies based on the data clustered in a group fashion. For eg… classification of a dataset containing a dog and horse dataset. Based on the nearest datapoint’s present it identifies wither it is a dog or a horse. 
+If the point i.e.. the topmost point present near the dog cluster then it predicts it is a dog and the same way the horse is predicted. 
+
+Training Algorithm : 
+1. Store all the data 
+
+Prediction Algorithm : 
+
+1. Calculate the distance from ‘x’ to all datapoint 
+2. Store the data in increasing distance from ‘x’.
+3. Predict the majority label form ‘k’ closest point.
+
+Pros : 
+1. Easy to use and simple.
+2. Training is trivial 
+3. Can add more datapoint 
+4. It has two parameters: 
+    1. K 
+    2. Distance Metric(Distance Formula)
+
+Cons : 
+1. High prediction cost 
+2. Not feasible for larger dataset 
+3. Does not work based on categorical data set
+
+#########################################################################################################
+########### Commonly asked question for data science position is “Classify the data anonymised data without know it”. ###########
+#########################################################################################################
+
+Step 1 : 
+	Create a scaler method where it considers only the featured data from the dataset 
+	scaler = StandardScaler()
+
+Step 2 : 
+	Fitting the scalable featured data 
+	scaler.fit(df.drop(‘NO_FEATURE_COL',axis=1))
+
+Step 3 : 
+	Converting the feature class into array format (scaled value)
+	scaled_features = scaler.transform(df.drop('TARGET CLASS',axis=1))
+	call the scaled_features
+
+Step 4 : 
+	Use the scaled_feature to recreate the data frame 
+	dataframename_feat = pd.DataFrame(scaled_features,columns=data_frame_name.columns[:-1]) # Slicing the unwanted column 
+
+Step 5 : 
+	Initialise the KNN classifier : 
+										KNN = KNeighborsClassifier(n_neighbors=integer) # n_neighbors number of neighbors want in the model 
+
+Step 6 : 
+	Fitting the model : model_name_used.fit(trained data to be passed)
+
+Step 7 : 
+	Predict the data : model_name_used.predict(test data to be passed)
