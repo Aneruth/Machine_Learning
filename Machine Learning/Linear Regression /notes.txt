@@ -1,20 +1,3 @@
-Linear Regression Theory 
-
-History : 
-	
-Started in 1800 by Francis Galton. He started by seeing the relationship between the children and their parents. He also investigated the fathers height with their sons. 
-
-For classic linear regression or least square method we need to calculate the closeness in “up and down” direction. 
-
-The goal of Linear regression is to minimise the distance between the data points and our line. 
-
-Ways to minimise the data : 
-	1. Sum of Squared Errors 
-	2. Sum of Absolute Errors 
-
-Popular method to minimise the data is “Least Square Method”. This linear regression line is fitted by minimising the sum of squares of the residuals. 
-The residual of Observation is defined by the difference between the observation(the Y-value) and the fitted line. 
-
 Linear Regression
 
 Selecting a model in Scikit-Learn (updated) : from sklearn.model_selection import train_test_split 
@@ -28,7 +11,7 @@ Basically we do here is a tuple unpacking where we assign the test 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=101)
 
-##### Extra ####
+
 To Import the Boston datasets we need to import : from skit.datasets import load_boston
 								boston = load_boston()
 
@@ -41,3 +24,17 @@ To predict the data :
 
 Step 1 : Initialise the unknown dataset : variable_name = model_name_locally_defined.predict( unknown_feature_used ) 
 
+Step 2 : To fit the model to the training data : model_name.fit(trained_data)
+
+Step 3 : To create a new DataFrame with respect to Coefficient : 
+										new_variable_name = pd.DataFrame(model_name.ceof_,model_name.columns,columns=[‘Coefficient’])
+
+Step 4 : To Predict the model : model_name.predict(X_test) 
+			After predicting the model make a scatter plot the predicted data. 
+
+Step 5 : We can also use the predicted data and test data to plot using histogram or histplot. 
+
+Step 6 : Calculate the Regression Evaluation Metrics’ : 
+						1. To calculate the Mean Absolute Error : metrics.mean_absolute_error(y_test,predicted_data)
+						2. To calculate the Mean Squared Error : metrics.mean_squared_error(y_test,predicted_data)
+						3. To calculate the Root Mean Square Error : np.sqrt(metrics.mean_squared_error(y_test,predicted_data))
