@@ -1,0 +1,64 @@
+Random Forest and ID3 (Chapter 8 : Introduction of Statistical Learning)
+
+################################################################### Theory ###################################################################
+ID3 
+
+Each of the columns represents the feature.
+
+Example playing a tennis or football with a friend. The basic column used is whether he will play or not. 
+Based on the outlook and the condition we can predict or construct the ID3 (or) Decision Tree. 
+
+In this we have two main feature that is : 
+													1. Node :
+														 It’s a split value for a certain attribute.
+
+													2. Edges :
+														It’s the outcome to split into next node.
+
+													3. Root :
+														The node that performs the first split.
+
+													4. Leaves :
+														Terminal node that predicts the output/outcome.
+
+
+Entropy and Information gain are the mathematical methods for choosing the best split. 
+
+Random Forest
+
+It’s a way to improve a performance of a single decision tree. The primary weakness of the DT is that they doesn’t tend to  have the best predictive accuracy. This is due to high variance which splits the training data that can lead to different trees. 
+
+The Random Forest consist of most important feature i.e… Bagging process. Its main procedure is to reduce the variance of MLK method. 
+
+################################################################ Practical ################################################################
+
+Note: To run sklearn.externals.six we need to downgrade the scikit-learn package to 0.22.  
+
+Step 1 : Import all the packages required for DT and RF
+			“ from sklearn.tree import DecisionTreeClassifier
+			from sklearn.ensemble import RandomForestClassifier”
+
+Step 2 : Split the data into two variable for testing and training such as : 
+																 X which excludes the target class 
+																 y which consist only the target class 
+
+Step 3 : Start with the single Decision Tree by calling the classifier 
+				model_variable_name = DecisionTreeClassifier()
+
+Step 4 : Likewise the other scikit learn we need to fit the model and predict the model 
+			
+			Fit the Model :  model_variable_name.fit(X_train,y_train) 
+			Predict the Model : model_variable_name.predcit(X_test)
+
+Step 5 : Import the packages for the confusion matrix and classification report : 
+			“from sklearn.metrics import classification_report,confusion_matrix”
+
+Step 6 : Print the confusion matrix of test data and the predicted data 
+
+Step 7 : To check for the Random Forest model 
+			Step 7.1 : import the package //(This is done at the beginning)//
+			Step 7.2 : Create a random forest model : mdoel_variable_name = RandomForestClassifier(n_estimators=200)
+			Step 7.3 : Proceed it with Step 4. 
+			Step 7.4 : Proceed it with Step 5. 
+
+Step 8 : For our convenience we can compare the confusion matrix for both models (Optional)
