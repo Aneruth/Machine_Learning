@@ -1,0 +1,71 @@
+Support Vector Machine[SVM] (Chapter 9 of Introduction to Statistical Learning)
+
+It is a supervised learning algorithm which learns the algorithm and used to predict or analyse the data and it’s pattern. 
+
+They are used in classification and regression analysis.
+
+It creates a gap between two created or predicted models where they are classified based on the category on which side the gap fall. 
+
+The gap is between the two feature class is called as the “hyperplane”. 
+
+How to choose the line that separates the classes: 
+	
+	1. Choose the hyperplane that maximizes the margin between the class. 
+	
+	2. The vector points that the margin lines touch are known as “Support Vectors”.  (Those are the training points that touch the margin lines)
+ 
+A grid search allows us to find the perfect parameters such as “Gamma values” or “C”.
+
+GridSearchCV describes the parameters that should be tried in a model to train the grid of parameters is defined as a dictionary where the keys are the parameters and the values is basically a list of settings to be tested. 
+
+“C” variable controls the cost of the misclassification on the training data. 
+
+Large “C” value gives low variance and higher variance value this is because we penalise that cost and for lower “C” value it is vice-versa.
+Small Game value provides larger Gaussian Variance.
+
+Verbose is the text output for the description of the process. 
+
+##############################################################################################################################################
+######################################## ##################### Practical Method ##################### ########################################
+##############################################################################################################################################
+
+Step 1 —>  Load the required packages :
+										numpy,pandas,seeaborn,matplotlib,GridSearchCV,train_test_split,sklearn.datasets,sklearn.svm
+
+Step 2 —> Create a local variable for the required dataset such as : variable_name = datasets_import_function() 
+		    Eg… cancer = load_breast_cancer()
+
+Step 3 —> Check the keys of that variable : variable_name.keys()
+
+Step 4 —> To create a dataframe to grab the data from keys :
+															df_feat = pd.DataFrame(cancer['data'],columns=cancer['feature_names'])
+
+Step 5 —>  split the data into two sets and assign the ‘X’ and ‘y’ variable.
+				5.1 —> X = df_feat , y = variable_name[‘target_class’]
+
+				5.2  —> X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=101)
+
+Step 6 —> Initialise the model : model_name = SVC()
+
+Step 7 —> Fit and predict the model 
+					model_name.fit(all train method)
+					model_name.predict(X_test)
+
+Step 8 —> Generate the classification report and the confusion matrix 
+
+Step 9 —> To check for the normalise solution using Grid Search : 
+										
+                                        9.1 —> Initialise the grid search variable as dict : var_name = {params}
+										
+                                        9.2 —> Feed the search variable to the ‘GridSearchCV’
+										
+                                        	9.2.1 —> Create a grid and pass the estimator and search variable : 
+																	grid = GridSearchCV(SVC(),search_variable,verbose=some_number)
+										
+                                        	9.2.2 —> To fit the grid : grid.fit(all_train_model)
+										
+                                        9.3 —> To get the best parameter fit from the grid : grid.best_params_
+										
+                                        9.4 —> Redo Step 7 for new grid.
+
+Step 10 —> Print the confusion and classification report of new grid.  
