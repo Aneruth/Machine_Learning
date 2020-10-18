@@ -1,0 +1,48 @@
+K-Means Algorithm(Chapter 10 of Introduction to statistical machine learning) 
+
+###########################################Theory###########################################
+
+Used to cluster and label data in unsupervised Machine Learning. It is an unsupervised algorithm that it take unlabelled data which will attend to group similar clusters together in our data. Eg… Market segmentation 
+
+The overall group of the K Means Algorithm is to divide the group into similar groups. 
+
+Algorithm:
+
+Step 1. Choose a number of clusters “k”.
+
+Step 2. Randomly assign each point to the cluster. 
+
+Step 3. Until the clusters stop changing repeat the following steps: 
+			
+			Step 3.1: For each cluster, compute the cluster centroid by taking the mean vector off the points. 
+			Step 3.2: Assign each data point to the cluster for which he centroid is closest. 
+
+Choosing the value for “k” : 
+
+Method 1: Using elbow method 
+
+Compute the SSE(sum of squared error) for some “k” values. Eg… 2,4,6,8,… etc… 
+SSE is defined as the sum of the squared distance between each member of the cluster and its centroid. 
+The main idea of selecting the elbow method is to choose “k” t which SSE decreases abruptly.  
+
+########################################## Practical ##########################################
+
+Method 1: Using artificial data 
+
+Step 1 —> Import the packages seaborn,matplotlib.pyplot  for visualisation. 
+
+Step 2 —> Import packages for KMeans as from sklearn.cluster import KMeans and sklearn.datasets import make_blobs
+
+Step 3 —> Initialise the blobs as 
+					variable_name = make_blobs(n_samples=200, n_features=2, centers=None,cluster_std=1.8,random_state=101)
+
+Step 4 —> Plot the blobs 
+
+Step 5 —> Initialise the KMeans Cluster as 
+					model_name = KMeans(n_cluster=number_of_clusters_require)
+
+Step 6 —> Fit the data and fetch cluster_center and labels 
+			    For cluster centre : model_name.cluster_center_
+			    For labels : model_name.labels_
+
+Step 7 —> Compare the original data with KMeans clusters data using matplotlib 
