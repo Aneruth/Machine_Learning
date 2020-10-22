@@ -1,0 +1,49 @@
+								Principal Component Analysis(Section 10.2 of Introduction to Statistical Learning)
+
+###############################################Theory###############################################
+
+This isn’t a full machine learning algorithm but it is used for the reduction of the component. 
+
+It is an unsupervised statistical learning that is used to examine the interrelations to a set of variable in order to identify the underlying structure of those variables. 
+
+They are also known as factor analysis. 
+
+In case of regression it make the best fit fro the data set but whereas factor analysis determines the several orthogonal (Right angles) lines of best fit to the data set. 
+
+The lines are perpendicular to the each other in n-dimensional space. 
+
+Components are linear transformation that choose a variable system for the data set such that the greatest variance of the data set comes to lie on the first axis and second greatest variance on the second axis, and continues.  
+
+This process is used to reduce the number of variable in an analysis. 
+
+The most challenging part of the PCA is to interpret the components. 
+
+############################################### Practical ################################################
+
+Step 1 —> Import the supporting data packages such NumPy,pandas,seaborn,matplotlib 
+
+Step 2 —> Load the dataset load_breast_cancer from “sklearn.datasets”. Import StandardScalar and PCA.
+
+Step 3 —> Create a new variable and import the dataset : variable_name = load_breast_cancer() and check the keys using varaiable_name.keys()
+ 
+Step 4 —> Pass the cancer variable to pandas dataframe by creating a new one 
+								dataframe_name = pd.DataFrame(cancer_variable_name[‘data’],columns=cancer_variable_name[‘feature_names’])
+			    Check the head of the newly create dataframe.
+
+Step 5 —> Create a Standard Scaler Model, fit the scaler model and transform the data.
+
+Step 6 —> Call the PCA model : pca_variable_model_name = PCA(n_components=2)
+
+Step 7 —> Fit the PCA model with the scaled data : pca_variable_name.fit(transformed_scaled_data)
+
+Step 8 —> Transform the at a into Principle Component 
+						varaible_component_name = pca_variable_model_name.transform(transformed_scaled_data)
+
+Step 9 —> Compare the shape of original data with PCA component :  varaible_component_name.shape {OPTIONAL}
+
+Step 10 —> Plot the data with PCA component : 
+											plt.scatter(varaible_component_name[:,0],varaible_component_name[:,1],c=variable_name['target_column’],cmap='plasma')
+
+Step 11 —> To assign the components : df_comp = pd.DataFrame(pca.components_,columns=cancer['feature_names']) and check the newly created dataframe 
+
+Step 12 —> Plot the newly assigned data using heat-map.
