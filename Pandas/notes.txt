@@ -48,5 +48,12 @@ DataFrames :
     Generate descriptive statistics. Descriptive statistics include those that summarize the central tendency, dispersion and shape of a
     dataset's distribution, excluding ``NaN`` values. Analyzes both numeric and object series, as well as ``DataFrame`` 
     column sets of mixed data types.
-    
+
+7. To remove the non ASCII variable or value in dataset : df.replace({r'[^\x00-\x7F]+':np.nan}, regex=True, inplace=True)
+
+8. To remove the any special characters in dataset: 
+                for i in range(0,df.shape[0]): ## To check outter structure
+                    for j in range(1,df.shape[1]): ## To check inner structure 
+                        if ',' in str(df.iloc[i][j]): 
+                             df.iloc[i][j]=df.iloc[i][j].replace('#','')
 ###### To Be Continued #######
