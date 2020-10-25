@@ -52,8 +52,8 @@ DataFrames :
 7. To remove the non ASCII variable or value in dataset : df.replace({r'[^\x00-\x7F]+':np.nan}, regex=True, inplace=True)
 
 8. To remove the any special characters in dataset: 
-                for i in range(0,df.shape[0]): ## To check outter structure
-                    for j in range(1,df.shape[1]): ## To check inner structure 
+                for i in range(0,df.shape[0]): ## To check columns
+                    for j in range(1,df.shape[1]): ## To check rows
                         if ',' in str(df.iloc[i][j]): 
                              df.iloc[i][j]=df.iloc[i][j].replace('#','')
 ###### To Be Continued #######
