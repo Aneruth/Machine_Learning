@@ -1,0 +1,50 @@
+Basic Understanding of the Perceptron Model
+
+Perceptron Model :
+
+Key Concepts :
+1. Single Biological Neuron 
+2. Perceptron 
+3. Multi-layer Perceptron Model
+4. Deep Learning Neural Network
+
+Stained Neuron is cerebral cortex. 
+
+The neurons consist of nucleus where it has Dendrites and Axon. 
+
+Dendrites are those as input going into the main nucleus.
+Axon are which is output of the nucleus.
+
+Introduced by Frank Rosenblatt in 1958.  
+
+Generally they are feed forward neural network.
+
+When we consider that if a nucleus has “n” inputs we can say that f(x) is the sum of the nucleus then we can say that y = x1+x2+……..+xn
+
+When we adjust the perceptron to learn and we are able to adjust some parameter in order to learn. In that case we add some weights to the input. Y = x1w1 + x2w2 + ………… + xnwn.
+
+When we have the x input as 0 then it means the weight actually don’t change anything. 
+To fix the above problem we can add the Bias term b to the inputs. It actually assign the neurons with it’s own particular bias sot the inputs end up not just getting multiplied by a weight having a bias added to them.
+
+We can say that when the input can be either positive or negative and same bias can also be positive our negative. 
+
+The formula is given by :  y = (x1*w1+b) + (x2*w2+b) + …..+(xn*wn+bn).
+
+(Single perceptron = Neuron)
+
+############# Neural Networks #############
+
+Multilayer perceptron model is known as the Artificial Neural Network (ANN).
+To build a multilayer perceptron model from the single layer perceptron model we just need to connect the more single perceptron model. 
+
+This can be achieved by taking the output of first layer perceptron and feeds them as input of next layer perceptron. 
+
+The first layer consist of features of information that we are trying to predict.
+
+The last layer is the output layer where the output of the model is defined. They are easily predictable since they are closely associated with the label that are actually trying to predict. 
+
+The layer in between the first and last layer is known as hidden layer. The hidden layer are difficult to interpret due to their high interconnectivity and distance away from known input or output values.
+
+Where neural network can be as deep neural network when it contains more than 2 or more hidden layers.
+
+############ Activation Function ############
