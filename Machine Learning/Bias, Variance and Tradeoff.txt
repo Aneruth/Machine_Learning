@@ -1,4 +1,4 @@
-Bias Variance and Tradeoff
+ Bias Variance and Tradeoff
 
 It is the point where we just adding a noise by adjusting the model complexity.  By doing this the train error goes down as it has to but the test error increases.
 Ultimately the model becomes overfit. 
